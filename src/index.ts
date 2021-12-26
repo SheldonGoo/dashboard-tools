@@ -1,2 +1,2 @@
-import Renderer from './Renderer';
-export default Renderer;
+import Workflow from './Workflow';
+export default Workflow;

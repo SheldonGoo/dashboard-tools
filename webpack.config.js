@@ -19,21 +19,20 @@ const base = {
       },
       // 用于加载解析 less 文件
       {
-        test: /\.less$/,
+        test: /\.(css|less)?$/,
         use: [
-          { loader: 'style-loader', },
+          'style-loader',
+          'css-loader',
           {
-            loader: 'css-loader',
+            loader: 'less-loader',
             options: {
-              modules: {
-                localIdentName: '[hash:base64:6]',
-              },
+              lessOptions: {
+                javascriptEnabled: true
+              }
             }
-          },
-          { loader: 'less-loader', },
+          }
         ]
       },
-
     ],
   },
   optimization: {
